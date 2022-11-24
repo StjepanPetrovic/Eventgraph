@@ -33,6 +33,8 @@
 		D51E2876292F83E900033C02 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D51E2875292F83E900033C02 /* QuartzCore.framework */; };
 		D51E2878292F83F400033C02 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D51E2877292F83F400033C02 /* SystemConfiguration.framework */; };
 		D51E287A292F83FE00033C02 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D51E2879292F83FE00033C02 /* UIKit.framework */; };
+		D5512C65292FB0FF00053897 /* GooglePlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5512C64292FB0FF00053897 /* GooglePlaces.framework */; };
+		D5512C67292FB1A600053897 /* GooglePlaces.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D5512C66292FB1A600053897 /* GooglePlaces.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		D51E2875292F83E900033C02 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D51E2877292F83F400033C02 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D51E2879292F83FE00033C02 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D5512C64292FB0FF00053897 /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlaces.framework; sourceTree = "<group>"; };
+		D5512C66292FB1A600053897 /* GooglePlaces.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = Eventgraph/GooglePlaces.framework/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,7 @@
 				D51E2857292F7F6500033C02 /* GoogleMapsBase.framework in Frameworks */,
 				D51E2856292F7F6500033C02 /* GoogleMaps.framework in Frameworks */,
 				D51E2855292F7F6500033C02 /* GoogleMapsCore.framework in Frameworks */,
+				D5512C65292FB0FF00053897 /* GooglePlaces.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +104,7 @@
 		D51E282C292F77CC00033C02 = {
 			isa = PBXGroup;
 			children = (
+				D5512C66292FB1A600053897 /* GooglePlaces.bundle */,
 				D51E2858292F81F100033C02 /* GoogleMaps.bundle */,
 				D51E2837292F77CC00033C02 /* Eventgraph */,
 				D51E2836292F77CC00033C02 /* Products */,
@@ -127,6 +133,7 @@
 				D51E2853292F7F6400033C02 /* GoogleMaps.framework */,
 				D51E2854292F7F6500033C02 /* GoogleMapsBase.framework */,
 				D51E2852292F7F6400033C02 /* GoogleMapsCore.framework */,
+				D5512C64292FB0FF00053897 /* GooglePlaces.framework */,
 			);
 			path = Eventgraph;
 			sourceTree = "<group>";
@@ -216,6 +223,7 @@
 				D51E2842292F77CC00033C02 /* Assets.xcassets in Resources */,
 				D51E2840292F77CC00033C02 /* Main.storyboard in Resources */,
 				D51E2859292F81F200033C02 /* GoogleMaps.bundle in Resources */,
+				D5512C67292FB1A600053897 /* GooglePlaces.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

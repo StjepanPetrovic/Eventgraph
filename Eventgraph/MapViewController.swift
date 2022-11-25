@@ -38,6 +38,23 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
 
     // The currently selected place.
     var selectedPlace: GMSPlace?
+    
+    // Update the map once the user has made their selection.
+    @IBAction func unwindToMain(segue: UIStoryboardSegue) {
+      // Clear the map.
+      mapView.clear()
+
+      // Add a marker to the map.
+      if let place = selectedPlace {
+        let marker = GMSMarker(position: place.coordinate)
+        marker.title = selectedPlace?.name
+        marker.snippet = selectedPlace?.formattedAddress
+        marker.map = mapView
+      }
+
+      listLikelyPlaces()
+    }
+          
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,19 +69,24 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
 
         placesClient = GMSPlacesClient.shared()
         
-        // Do any additional setup after loading the view.
-        // Create a GMSCameraPosition that tells the map to display the
-        // coordinate -33.86,151.20 at zoom level 6.
-        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
-        let mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
+        // A default location to use when location permission is not granted.
+        let defaultLocation = CLLocation(latitude: -33.869405, longitude: 151.199)
+        
+        // Create a map.
+        let zoomLevel = locationManager.accuracyAuthorization == .fullAccuracy ? preciseLocationZoomLevel : approximateLocationZoomLevel
+        let camera = GMSCameraPosition.camera(withLatitude: defaultLocation.coordinate.latitude,
+                                              longitude: defaultLocation.coordinate.longitude,
+                                              zoom: zoomLevel)
+        mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
+        mapView.settings.myLocationButton = true
+        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        mapView.isMyLocationEnabled = true
+        
+        // Add the map to the view, hide it until we've got a location update.
         self.view.addSubview(mapView)
+        mapView.isHidden = false
 
-        // Creates a marker in the center of the map.
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
-        marker.map = mapView
+        listLikelyPlaces()
     }
 
     // Populate the array with the list of likely places.
@@ -92,6 +114,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             }
         }
     }
+    
+    // Prepare the segue.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      if segue.identifier == "segueToSelect" {
+        if let nextViewController = segue.destination as? PlacesViewController {
+          nextViewController.likelyPlaces = likelyPlaces
+        }
+      }
+    }
+          
 }
 
 // Delegates to handle events for the location manager.

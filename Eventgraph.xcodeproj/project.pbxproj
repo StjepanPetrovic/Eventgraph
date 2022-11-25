@@ -35,6 +35,7 @@
 		D51E287A292F83FE00033C02 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D51E2879292F83FE00033C02 /* UIKit.framework */; };
 		D5512C65292FB0FF00053897 /* GooglePlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5512C64292FB0FF00053897 /* GooglePlaces.framework */; };
 		D5512C67292FB1A600053897 /* GooglePlaces.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D5512C66292FB1A600053897 /* GooglePlaces.bundle */; };
+		D5512C6B2930A7F500053897 /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5512C6A2930A7F500053897 /* PlacesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		D51E2879292F83FE00033C02 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D5512C64292FB0FF00053897 /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlaces.framework; sourceTree = "<group>"; };
 		D5512C66292FB1A600053897 /* GooglePlaces.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = Eventgraph/GooglePlaces.framework/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
+		D5512C6A2930A7F500053897 /* PlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,9 +128,10 @@
 				D51E2838292F77CC00033C02 /* AppDelegate.swift */,
 				D51E283A292F77CC00033C02 /* SceneDelegate.swift */,
 				D51E283C292F77CC00033C02 /* MapViewController.swift */,
+				D5512C6A2930A7F500053897 /* PlacesViewController.swift */,
 				D51E283E292F77CC00033C02 /* Main.storyboard */,
-				D51E2841292F77CC00033C02 /* Assets.xcassets */,
 				D51E2843292F77CC00033C02 /* LaunchScreen.storyboard */,
+				D51E2841292F77CC00033C02 /* Assets.xcassets */,
 				D51E2846292F77CC00033C02 /* Info.plist */,
 				D51E2853292F7F6400033C02 /* GoogleMaps.framework */,
 				D51E2854292F7F6500033C02 /* GoogleMapsBase.framework */,
@@ -234,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5512C6B2930A7F500053897 /* PlacesViewController.swift in Sources */,
 				D51E283D292F77CC00033C02 /* MapViewController.swift in Sources */,
 				D51E2839292F77CC00033C02 /* AppDelegate.swift in Sources */,
 				D51E283B292F77CC00033C02 /* SceneDelegate.swift in Sources */,

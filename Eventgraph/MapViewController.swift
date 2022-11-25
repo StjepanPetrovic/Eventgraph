@@ -21,10 +21,11 @@
  */
 
 import UIKit
+import CoreLocation
 import GoogleMaps
 import GooglePlaces
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController {
     
     var locationManager: CLLocationManager!
     var currentLocation: CLLocation?
@@ -84,7 +85,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
         // Add the map to the view, hide it until we've got a location update.
         self.view.addSubview(mapView)
-        mapView.isHidden = false
+        mapView.isHidden = true
 
         listLikelyPlaces()
     }
@@ -127,7 +128,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
 }
 
 // Delegates to handle events for the location manager.
-extension MapViewController {
+extension MapViewController: CLLocationManagerDelegate {
 
   // Handle incoming location events.
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -178,6 +179,8 @@ extension MapViewController {
     @unknown default:
       fatalError()
     }
+      
+      
   }
 
   // Handle location manager errors.
